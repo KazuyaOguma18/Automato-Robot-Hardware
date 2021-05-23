@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-1-g15f4949  Build Version: 1.6.7594.29634
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="harvest-studio">
+  <link
+    name="harest-base">
+    <inertial>
+      <origin
+        xyz="-0.555097350964014 -0.898558915888915 -0.113759989287149"
+        rpy="0 0 0" />
+      <mass
+        value="10.2467447687249" />
+      <inertia
+        ixx="0.301755421712077"
+        ixy="2.76498891049291E-10"
+        ixz="1.09538964578486E-07"
+        iyy="0.326241987382393"
+        iyz="7.45524029424658E-11"
+        izz="0.102086855732303" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://harvest-studio/meshes/harest-base.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://harvest-studio/meshes/harest-base.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="camera-link">
+    <inertial>
+      <origin
+        xyz="-2.65343047978206E-06 0.00348132420557046 0.0446566717866618"
+        rpy="0 0 0" />
+      <mass
+        value="2.78889228470616" />
+      <inertia
+        ixx="0.00412183169769487"
+        ixy="4.09153441584967E-07"
+        ixz="-3.17096411632146E-08"
+        iyy="0.00242404649373798"
+        iyz="0.000234310882645277"
+        izz="0.00609587738225286" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://harvest-studio/meshes/camera-link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://harvest-studio/meshes/camera-link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="camera_joint"
+    type="revolute">
+    <origin
+      xyz="-0.55495 -0.675 0.80244"
+      rpy="-0.20407 0 3.1416" />
+    <parent
+      link="harest-base" />
+    <child
+      link="camera-link" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="-0.5"
+      upper="0.5"
+      effort="0"
+      velocity="0" />
+  </joint>
+</robot>
