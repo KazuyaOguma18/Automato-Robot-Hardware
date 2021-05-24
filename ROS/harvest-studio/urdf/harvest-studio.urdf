@@ -86,7 +86,7 @@
   </link>
   <joint
     name="camera_joint"
-    type="fixed">
+    type="revolute">
     <origin
       xyz="0.00085 0.465 0.98"
       rpy="0 0 -3.1416" />
