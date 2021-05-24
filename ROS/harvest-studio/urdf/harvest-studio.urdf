@@ -5,20 +5,20 @@
 <robot
   name="harvest-studio">
   <link
-    name="harest-base">
+    name="stand_base">
     <inertial>
       <origin
-        xyz="0.000696907579288617 0.241579417748028 0.0643234810436763"
+        xyz="0.000547939099085761 0.951568142680923 -0.465000341423841"
         rpy="0 0 0" />
       <mass
-        value="10.2530883442845" />
+        value="0.109449715271813" />
       <inertia
-        ixx="0.301757152337457"
-        ixy="1.10550578941882E-09"
-        ixz="1.09640049684721E-07"
-        iyy="0.326245406728091"
-        iyz="-1.56034601120319E-10"
-        izz="0.10209204718156" />
+        ixx="0.000113302435839247"
+        ixy="1.09640050259602E-07"
+        ixz="-1.10550562224374E-09"
+        iyy="0.000117793394152384"
+        iyz="1.56037099730454E-10"
+        izz="2.19068000131868E-05" />
     </inertial>
     <visual>
       <origin
@@ -26,47 +26,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://harvest-studio/meshes/harest-base.STL" />
-      </geometry>
-      <material
-        name="">
-        <color
-          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
-      </material>
-    </visual>
-    <collision>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
-      <geometry>
-        <mesh
-          filename="package://harvest-studio/meshes/harest-base.STL" />
-      </geometry>
-    </collision>
-  </link>
-  <link
-    name="camera-link">
-    <inertial>
-      <origin
-        xyz="-0.555798227654505 -1.15796914650996 -0.0127179000558243"
-        rpy="0 0 0" />
-      <mass
-        value="2.78889236681532" />
-      <inertia
-        ixx="0.00412183232658974"
-        ixy="4.07170566456366E-07"
-        ixz="5.18842380195653E-08"
-        iyy="0.00248184816185608"
-        iyz="-0.000513612716556471"
-        izz="0.0060380765712014" />
-    </inertial>
-    <visual>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
-      <geometry>
-        <mesh
-          filename="package://harvest-studio/meshes/camera-link.STL" />
+          filename="package://harvest-studio/meshes/stand_base.STL" />
       </geometry>
       <material
         name="">
@@ -80,7 +40,47 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://harvest-studio/meshes/camera-link.STL" />
+          filename="package://harvest-studio/meshes/stand_base.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="camera_link">
+    <inertial>
+      <origin
+        xyz="-2.65395705622228E-06 0.00348131731693191 0.0446566695341748"
+        rpy="0 0 0" />
+      <mass
+        value="2.78889236681529" />
+      <inertia
+        ixx="0.00412183232658975"
+        ixy="4.09236432592131E-07"
+        ixz="-3.17078315949037E-08"
+        iyy="0.00242404662476709"
+        iyz="0.000234310769319973"
+        izz="0.0060958781082902" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://harvest-studio/meshes/camera_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://harvest-studio/meshes/camera_link.STL" />
       </geometry>
     </collision>
   </link>
@@ -88,17 +88,17 @@
     name="camera_joint"
     type="revolute">
     <origin
-      xyz="-0.55495 -0.675 0.80244"
-      rpy="-0.20407 0 3.1416" />
+      xyz="0.00085 0.465 0.98"
+      rpy="0 0 -3.1416" />
     <parent
-      link="harest-base" />
+      link="stand_base" />
     <child
-      link="camera-link" />
+      link="camera_link" />
     <axis
       xyz="1 0 0" />
     <limit
-      lower="-0.5"
-      upper="0.5"
+      lower="0"
+      upper="0"
       effort="0"
       velocity="0" />
   </joint>
