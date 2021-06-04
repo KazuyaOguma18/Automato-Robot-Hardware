@@ -1,15 +1,19 @@
 <launch>
+    <!--
     <group ns="azure">
         <include file="$(find azure_kinect_ros_driver)/launch/driver.launch">
             <arg name="overwrite_robot_description" value="false"/>
         </include>
     </group>
+    <include file="$(find harvest-studio)/launch/azure_camera_dynamixel_controllers.launch"/>
+    <node pkg="tf" type="static_transform_publisher" name="camera_stand_link" args="0 0.04045 0.072 1.57 0 0 camera_link camera_base 100"/>-->
+
 
     <include file="$(find harvest-studio)/launch/display.launch"/>
     <include file="$(find xarm5_moveit_config)/launch/demo.launch"/>
-    <include file="$(find harvest-studio)/launch/azure_camera_dynamixel_controllers.launch"/>
+    
 
-    <node pkg="tf" type="static_transform_publisher" name="camera_stand_link" args="0 0.04045 0.072 1.57 0 0 camera_link camera_base 100"/>
+    
     
     <node pkg="tf" type="static_transform_publisher" name="arm_stand_link" args="0 0 0 -1.57 0 0 stand_base world 100"/>
 
